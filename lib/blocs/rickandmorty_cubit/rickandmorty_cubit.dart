@@ -50,7 +50,6 @@ class RickandmortyCubit extends Cubit<RickandmortyState> {
 void loadCharacter(String characterId) async {
 
   try {
-  print('sdfsdfsdfsdfsdf');
 
     final characterDetail = await _repository.getCharacter(characterId);
 

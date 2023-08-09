@@ -55,10 +55,8 @@ class _DetailMovieViewState extends State<_DetailMovieView> {
 
         if (state is CharacterState) {
           character = state.characterDetail;
-          print(character);
         } else {
-          print(state);
-          return Scaffold(body: const Center(child: CircularProgressIndicator()));
+          return const Scaffold(body: Center(child: CircularProgressIndicator()));
         }
 
         return Scaffold(

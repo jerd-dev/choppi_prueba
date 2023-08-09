@@ -4,7 +4,6 @@ import 'package:choppi_prueba/config/constants/enviroment.dart';
 import 'package:choppi_prueba/model/characters_rickandmorty.dart';
 import 'package:choppi_prueba/model/rickandmorty_response.dart';
 import 'package:dio/dio.dart';
-import 'package:flutter/material.dart';
 
 class RickAndMortyRepository {
 
@@ -51,11 +50,9 @@ class RickAndMortyRepository {
   Future<CharacterRickAndMorty> getCharacter( String id ) async {
     final response = await dio.get('/character/${id.replaceFirst(':', '')}/');
 
-    print(response.statusCode);
     if (response.statusCode == 200) {
 
     final rickandmortyResponse = CharacterRickAndMorty.fromJson(response.data);
-      print(rickandmortyResponse);
     return rickandmortyResponse;
 
     } else {
